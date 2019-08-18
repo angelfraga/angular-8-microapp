@@ -17,10 +17,12 @@ import { PushPipe } from './push.pipe';
   imports: [
     BrowserModule,
     RouterModule.forRoot([
-      { path: 'client-a', component: CoreComponent, children: [
-        { path: 'page1', component: Page1Component },
-        { path: 'page2', component: Page2Component },
-      ]},
+      {
+        path: 'client-a', component: CoreComponent, children: [
+          { path: 'page1', component: Page1Component },
+          { path: 'page2', component: Page2Component },
+        ]
+      },
       { path: '**', component: EmptyComponent }
     ], { useHash: true }),
     ReactiveFormsModule
@@ -41,7 +43,7 @@ import { PushPipe } from './push.pipe';
     ClientAWidgetComponent
   ]
 })
-export class AppModule { 
+export class AppModule {
 
   constructor(private injector: Injector) {
   }
@@ -49,8 +51,8 @@ export class AppModule {
   ngDoBootstrap() {
     // const appElement = createCustomElement(AppComponent, { injector: this.injector})
     // customElements.define('client-a', appElement);
-
-    const widgetElement = createCustomElement(ClientAWidgetComponent, { injector: this.injector})
+    console.log('registering client-a-widget');
+    const widgetElement = createCustomElement(ClientAWidgetComponent, { injector: this.injector })
     customElements.define('client-a-widget', widgetElement);
   }
 }

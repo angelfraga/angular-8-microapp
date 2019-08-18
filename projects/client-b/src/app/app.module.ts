@@ -15,10 +15,12 @@ import { CoreComponent } from './core/core.component';
   imports: [
     BrowserModule,
     RouterModule.forRoot([
-      { path: 'client-b', component: CoreComponent, children: [
-        { path: 'page1', component: Page1Component },
-        { path: 'page2', component: Page2Component },
-      ]},
+      {
+        path: 'client-b', component: CoreComponent, children: [
+          { path: 'page1', component: Page1Component },
+          { path: 'page2', component: Page2Component },
+        ]
+      },
       { path: '**', component: EmptyComponent }
     ], { useHash: true }),
     ReactiveFormsModule
@@ -34,10 +36,10 @@ import { CoreComponent } from './core/core.component';
   providers: [],
   bootstrap: [AppComponent],
   entryComponents: [
-    
+
   ]
 })
-export class AppModule { 
+export class AppModule {
   constructor(private injector: Injector) {
   }
 

@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "live-server dist/shell",
+    "start": "live-server --port=8081 --entry-file=index.html dist/shell ",
     "build": "npm run build:shell && npm run build:clients",
     "build:clients": "npm run build:client-a && npm run build:client-b",
     "build:client-a": "ng build --prod --single-bundle --project client-a --output-hashing none --vendor-chunk false --output-path dist/shell/client-a",

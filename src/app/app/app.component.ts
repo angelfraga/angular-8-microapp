@@ -1,15 +1,13 @@
-import { element } from 'protractor';
 import { Component } from '@angular/core';
-import { Subject } from 'rxjs';
-import { StateService } from './state.service';
+import { StateService } from './../state.service';
 
 @Component({
-  selector: 'app-root',
+  selector: 'app',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  
+
   constructor(private stateService: StateService) {
   }
 
@@ -24,7 +22,7 @@ export class AppComponent {
       path: 'client-b/main.js',
       element: 'client-b'
     },
-    
+
   };
 
   ngOnInit() {
@@ -53,7 +51,7 @@ export class AppComponent {
     const script = document.createElement('script');
     script.src = configItem.path;
     content.appendChild(script);
-    
+
     const element: HTMLElement = document.createElement(configItem.element);
     content.appendChild(element);
 
@@ -64,7 +62,7 @@ export class AppComponent {
 
 
 
-    
+
 
 
 
